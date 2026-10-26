@@ -38,7 +38,7 @@ scored logical outcome. Run locally to change the circuit and replay shots.*
 
 ## Evidence and scope
 
-- 14 genuinely trained checkpoints: three initialization seeds at each of
+- 14 trained checkpoints: three initialization seeds at each of
   d3/d5/d7, four d3 controls, and one full-map readout revision.
 - 60,000 training shots and 24,000 validation shots per distance; 10 epochs.
 - 840,000 primary test shots across 42 exact circuit/noise settings, plus

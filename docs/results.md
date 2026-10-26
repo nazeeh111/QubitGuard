@@ -2,7 +2,7 @@
 
 QubitGuard is a measured engineering study. Its compact neural hybrid does not
 establish a statistically meaningful advantage over correlated PyMatching in
-the tested conditions. The negative result is the result, not a missing feature.
+the tested conditions.
 
 ## Reference operating point
 

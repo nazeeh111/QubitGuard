@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     env:
-      MPLCONFIGDIR: ${{ runner.temp }}/qubitguard-mpl
+      MPLCONFIGDIR: /tmp/qubitguard-mpl
       OMP_NUM_THREADS: 2
     steps:
       - uses: actions/checkout@v4
