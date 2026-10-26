@@ -191,11 +191,8 @@ mixed-noise training can recover matching mistakes at acceptable CPU cost.
 The experiment tests that hypothesis; it does not assume it succeeds.
 
 Convolutional surface-code decoding and neural-plus-matching are established
-prior art. [AlphaQubit](https://www.nature.com/articles/s41586-024-08148-8)
-and [NVIDIA's pre-decoding study](https://arxiv.org/abs/2604.12841v1) motivate
-the work. Their hardware, training budgets, noise models and architectures
-are different. QubitGuard does not relabel their implementation or compare
-laptop timing numerically with NVIDIA GB300 results.
+prior art; the [research foundations](docs/research-foundations.md) document
+the relevant literature and differences in experimental scope.
 
 ## Layout
 
@@ -215,9 +212,8 @@ scripts/         replay, report generation and local launch helpers
 ## License and attribution
 
 Original implementation, synthetic datasets and newly trained checkpoints:
-[MIT](LICENSE). External dependencies retain their licenses. NVIDIA's source
-license and pretrained-weight license are separate. No NVIDIA or AlphaQubit
-weights are included or used. See [notices](THIRD_PARTY_NOTICES.md) and
+[MIT](LICENSE). External dependencies retain their licenses. See
+[notices](THIRD_PARTY_NOTICES.md) and
 [BibTeX references](docs/references.bib). The repository includes the complete
 experiment artifacts without Git LFS or gated downloads. Scientific execution
 records preserve the original local study; current GitHub Actions runs are
