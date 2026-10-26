@@ -1,0 +1,13 @@
+{
+  "setting": {
+    "distance": 3,
+    "noise": 0.015,
+    "profile": "uniform",
+    "basis": "x"
+  },
+  "seed": 15095237067722715517,
+  "shots": 20000,
+  "sha256": "2eff18439c2cfa1dfc01d6de04fde9e15e520fe0ee51a646b3c4dc15e17a90ba",
+  "circuit_sha256": "93c522688a9d1684629f0cb864d5d009150e0d067708e2b5a0c2c24596400b13",
+  "seed_policy": "fullmap-v2-confirmatory"
+}

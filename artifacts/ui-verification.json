@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "method": "Manual live Chrome/CUA observations and current-source screenshots; API invariants also exercised by the automated suite.",
+  "desktop": "Normal Chrome viewport, live real Stim/model response and all decoder outcomes.",
+  "mobile": {
+    "viewport_width": 390,
+    "document_width": 390,
+    "graph_width": 356.8125
+  },
+  "checks": [
+    "Live d3/d7 circuit controls and space-time view",
+    "Time slider Home + step produced Round1/3",
+    "Unsupported Z-memory neural output unavailable",
+    "d3 p0.012 seed4: logical failure with valid syndrome certificate, actual0/predicted1",
+    "d3 p0.01 seed42: logical state recovered",
+    "D7 measurement-heavy: three zero-failure upper-bound triangles, 21 primary rows",
+    "D3 include-ablation toggle:63 rows; restored to21 primary rows"
+  ],
+  "screenshots": [
+    "../figures/playground.png",
+    "../figures/logical-failure.png"
+  ],
+  "local_url": "http://127.0.0.1:8917",
+  "publication": "None; loopback-only local application"
+}

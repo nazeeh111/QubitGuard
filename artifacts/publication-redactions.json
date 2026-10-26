@@ -1,0 +1,17 @@
+{
+  "reason": "Remove workstation paths from public log copies; original logs preserved outside the public repository.",
+  "files": [
+    {
+      "file": "artifacts/initial-fit-run.log",
+      "original_sha256": "00ced9c44dfc358d3796ab522d9251746218e368cc2356cdb29678c9eebe2a4a",
+      "public_sha256": "35a54c9ba8fccfc085eb05dba18e29ecd7f44e9088f9869169ea1a113c002a6a",
+      "change": "Only absolute local machine paths replaced with <project>/<environment>; numerical output and error text retained."
+    },
+    {
+      "file": "artifacts/test-results.txt",
+      "original_sha256": "770207894d74c2363d8574a3fb614340732cd19f532474051e32401096eae2db",
+      "public_sha256": "116f768fd77b76e94a1a005214ef97737050996e0f8bd10ab743e55239ae6fe1",
+      "change": "Only absolute local machine paths replaced with <project>/<environment>; numerical output and error text retained."
+    }
+  ]
+}

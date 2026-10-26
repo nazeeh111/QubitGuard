@@ -1,0 +1,17 @@
+name: Research proposal
+description: Suggest a falsifiable experiment or a stronger comparison.
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis and motivation
+      description: What measurable result would support or reject the idea? Link relevant primary sources.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Evaluation protocol
+      description: Specify data, baselines, ablations, independent test streams, compute budget and full inference cost.
+    validations:
+      required: true

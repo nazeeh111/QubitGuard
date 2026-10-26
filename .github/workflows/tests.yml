@@ -1,0 +1,39 @@
+name: Scientific contracts
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+concurrency:
+  group: scientific-contracts-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      MPLCONFIGDIR: ${{ runner.temp }}/qubitguard-mpl
+      OMP_NUM_THREADS: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install CPU PyTorch on Linux
+        if: runner.os == 'Linux'
+        run: python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+      - name: Install pinned environment and package
+        run: |
+          python -m pip install -r requirements-lock.txt
+          python -m pip install --no-deps -e .
+      - name: Verify complete release integrity
+        run: qubitguard verify
+      - name: Test scientific and publication contracts
+        run: python -m pytest -q
+      - name: Reconcile all retained numerical claims
+        run: python scripts/audit_results.py
+      - name: Verify installed command
+        run: qubitguard --help

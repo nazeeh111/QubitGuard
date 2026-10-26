@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, cite QubitGuard and the underlying Stim, PyMatching, and neural-decoding research."
+title: "QubitGuard: a CPU-scale neural surface-code decoding laboratory"
+type: software
+version: 0.1.0
+date-released: 2026-10-25
+license: MIT
+authors:
+  - family-names: "Abdul-Hadi"
+    given-names: "Nazeeh"
+abstract: >-
+  An independently implemented, reproducible engineering study of compact
+  spatiotemporal logical-frame learning with strong matching baselines,
+  independent simulated test data, explicit graph certificates and an
+  interactive simulator. No hardware or superiority claim is implied.
+repository-code: "https://github.com/nazeeh111/QubitGuard"
+url: "https://github.com/nazeeh111/QubitGuard"

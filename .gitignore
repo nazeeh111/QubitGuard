@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+*.egg-info/
+.cache/
+experiments/fresh/
+build/
+dist/
+# Scientific execution logs are release evidence, even if a global rule ignores logs.
+!artifacts/*.log
+!experiments/fullmap-v2/artifacts/*.log

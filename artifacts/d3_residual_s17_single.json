@@ -1,0 +1,247 @@
+{
+  "name": "d3_residual_s17_single",
+  "distance": 3,
+  "variant": "residual",
+  "seed": 17,
+  "single_noise": true,
+  "parameters": 4209,
+  "checkpoint_bytes": 22157,
+  "checkpoint_sha256": "524d88695b0b46edeb5ca9e9fa3228e4304479aa85da015b010e364f651404a0",
+  "train_shots": 60000,
+  "validation_shots": 24000,
+  "train_noise": [
+    0.007
+  ],
+  "training_seconds": 28.620435041026212,
+  "shots_per_second": 20964.04192109326,
+  "threshold": 0.84,
+  "best_epoch": 7,
+  "validation_errors": 964,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.518324842707316,
+      "validation_errors": 1009,
+      "validation_ler": 0.042041666666666665,
+      "threshold": 0.30999999999999994,
+      "seconds": 3.08235733397305
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.4127996726512909,
+      "validation_errors": 996,
+      "validation_ler": 0.0415,
+      "threshold": 0.7699999999999999,
+      "seconds": 3.4544709998881444
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.35380492215156556,
+      "validation_errors": 981,
+      "validation_ler": 0.040875,
+      "threshold": 0.7799999999999999,
+      "seconds": 2.93665487493854
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.3480057107448578,
+      "validation_errors": 974,
+      "validation_ler": 0.04058333333333333,
+      "threshold": 0.7899999999999999,
+      "seconds": 2.717998916050419
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3444795317808787,
+      "validation_errors": 965,
+      "validation_ler": 0.04020833333333333,
+      "threshold": 0.8499999999999999,
+      "seconds": 2.2606283329660073
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.3408643768787384,
+      "validation_errors": 964,
+      "validation_ler": 0.04016666666666667,
+      "threshold": 0.8499999999999999,
+      "seconds": 2.4296360419830307
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.33694350118637084,
+      "validation_errors": 964,
+      "validation_ler": 0.04016666666666667,
+      "threshold": 0.84,
+      "seconds": 3.97914612502791
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.3360952360073725,
+      "validation_errors": 966,
+      "validation_ler": 0.04025,
+      "threshold": 0.84,
+      "seconds": 3.876078375033103
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.3343629177014033,
+      "validation_errors": 967,
+      "validation_ler": 0.04029166666666667,
+      "threshold": 0.8599999999999999,
+      "seconds": 1.8098309999331832
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.33219737029075624,
+      "validation_errors": 968,
+      "validation_ler": 0.04033333333333333,
+      "threshold": 0.84,
+      "seconds": 2.067126417066902
+    }
+  ],
+  "train_provenance": [
+    {
+      "schema_version": 1,
+      "setting": {
+        "distance": 3,
+        "noise": 0.007,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "split": "train",
+      "seed": 70749257993755258,
+      "shots": 60000,
+      "stim_version": "1.16.0",
+      "pymatching_version": "2.4.0",
+      "circuit_sha256": "9b7ca11137d3fc08fcd5e0a4b5e7cf14fbf18b91b66380c4d92f143334a0ce83",
+      "sha256": "85fe159982536551c61b2a1be44b8c9f824d364b4dbab41e610bdf5ae36a5926",
+      "file": "train_d3_x_uniform_p0.007000_n60000.npz",
+      "target": "single final logical-observable flip, not detector parity",
+      "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+      "postrun_replay_verified": true
+    }
+  ],
+  "validation_provenance": [
+    {
+      "schema_version": 1,
+      "setting": {
+        "distance": 3,
+        "noise": 0.003,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "split": "validation",
+      "seed": 4615450951756534428,
+      "shots": 8000,
+      "stim_version": "1.16.0",
+      "pymatching_version": "2.4.0",
+      "circuit_sha256": "01d7f85eecf96125d6313d7026aff7df51edb222f2a79b24b69651eb7890f41e",
+      "sha256": "1126a0ed4e15f7b132d6c950e47dca650ebc48ba9ac8a0799d7bfae520f14866",
+      "file": "validation_d3_x_uniform_p0.003000_n8000.npz",
+      "target": "single final logical-observable flip, not detector parity",
+      "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+      "postrun_replay_verified": true
+    },
+    {
+      "schema_version": 1,
+      "setting": {
+        "distance": 3,
+        "noise": 0.007,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "split": "validation",
+      "seed": 6815535917343784745,
+      "shots": 8000,
+      "stim_version": "1.16.0",
+      "pymatching_version": "2.4.0",
+      "circuit_sha256": "9b7ca11137d3fc08fcd5e0a4b5e7cf14fbf18b91b66380c4d92f143334a0ce83",
+      "sha256": "e7f31f53023490ab65590aafa67780f7089cb326de2534aa9fa92f90c641cfcc",
+      "file": "validation_d3_x_uniform_p0.007000_n8000.npz",
+      "target": "single final logical-observable flip, not detector parity",
+      "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+      "postrun_replay_verified": true
+    },
+    {
+      "schema_version": 1,
+      "setting": {
+        "distance": 3,
+        "noise": 0.012,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "split": "validation",
+      "seed": 8777619558507814511,
+      "shots": 8000,
+      "stim_version": "1.16.0",
+      "pymatching_version": "2.4.0",
+      "circuit_sha256": "e379df2b3b6aa9ffd01da1b9a01cc240333b0467c105442ead93f369e4621e43",
+      "sha256": "9b1f7b9d71af171851e2d379eeb33dc96623576967898b48a7e78f98e5628521",
+      "file": "validation_d3_x_uniform_p0.012000_n8000.npz",
+      "target": "single final logical-observable flip, not detector parity",
+      "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+      "postrun_replay_verified": true
+    }
+  ],
+  "torch_version": "2.14.1",
+  "device": "cpu",
+  "threads": 4,
+  "probability_note": "class-weighted sigmoid score, not calibrated probability; threshold chosen on validation",
+  "training_config": {
+    "schema_version": 1,
+    "experiment": "cpu-residual-v1",
+    "distances": [
+      3,
+      5,
+      7
+    ],
+    "basis": "x",
+    "rounds_multiplier": 1,
+    "train_noise": [
+      0.003,
+      0.007,
+      0.012
+    ],
+    "test_noise": [
+      0.001,
+      0.003,
+      0.005,
+      0.007,
+      0.01,
+      0.012,
+      0.015
+    ],
+    "train_profiles": [
+      "uniform"
+    ],
+    "test_profiles": [
+      "uniform",
+      "biased"
+    ],
+    "train_shots_per_setting": 20000,
+    "validation_shots_per_setting": 8000,
+    "test_shots_per_setting": 20000,
+    "epochs": 10,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "width": 8,
+    "threads": 4,
+    "training_seeds": [
+      17,
+      29,
+      43
+    ],
+    "models": [
+      "residual",
+      "direct",
+      "no_time",
+      "no_correlation"
+    ],
+    "ablation_distances": [
+      3
+    ],
+    "seed_policy": "sha256-split-v1"
+  },
+  "experiment_signature": "9ab8b7f7a2ea31f746185ed00b879eeb32e0319f8ba306c59712f6dfd422d76e",
+  "provenance_note": "Compatibility metadata added after initial run. Exact dataset/circuit/baseline/feature replay verified. Training numerical settings and model architecture unchanged; cache safeguards added during fit. Full d3 deterministic retraining checked separately."
+}

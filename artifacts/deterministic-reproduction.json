@@ -1,0 +1,22 @@
+{
+  "exact_all_tensors": true,
+  "tensor_checks": {
+    "encoder.0.weight": true,
+    "encoder.0.bias": true,
+    "encoder.2.weight": true,
+    "encoder.2.bias": true,
+    "encoder.4.weight": true,
+    "encoder.4.bias": true,
+    "encoder.6.weight": true,
+    "encoder.6.bias": true,
+    "head.0.weight": true,
+    "head.0.bias": true,
+    "head.2.weight": true,
+    "head.2.bias": true
+  },
+  "threshold_equal": true,
+  "epoch_equal": true,
+  "original_sha256": "4cc810e077bce9fadcc8b118d8c0d208c138c7ee5a64401cda331506c3f4fd4f",
+  "reproduced_sha256": "4cc810e077bce9fadcc8b118d8c0d208c138c7ee5a64401cda331506c3f4fd4f",
+  "scope": "Full d3 seed17 60k-shot 10-epoch CPU retraining with current source and saved datasets; same platform/library versions. Does not guarantee bitwise replay on other platforms."
+}

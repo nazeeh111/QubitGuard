@@ -1,0 +1,43 @@
+schema_version: 1
+experiment: cpu-pilot-current-v1
+distances:
+- 3
+- 5
+- 7
+basis: x
+rounds_multiplier: 1
+train_noise:
+- 0.003
+- 0.007
+- 0.012
+test_noise:
+- 0.001
+- 0.003
+- 0.005
+- 0.007
+- 0.01
+- 0.012
+- 0.015
+train_profiles:
+- uniform
+test_profiles:
+- uniform
+- biased
+train_shots_per_setting: 8000
+validation_shots_per_setting: 2000
+test_shots_per_setting: 20000
+epochs: 5
+batch_size: 512
+learning_rate: 0.001
+width: 8
+threads: 4
+training_seeds:
+- 17
+models:
+- residual
+- direct
+- no_time
+- no_correlation
+seed_policy: sha256-split-v1
+ablation_distances:
+- 3

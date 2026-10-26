@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "setting": {
+    "distance": 3,
+    "noise": 0.012,
+    "profile": "uniform",
+    "basis": "x"
+  },
+  "split": "train",
+  "seed": 101657773794274682,
+  "shots": 20000,
+  "stim_version": "1.16.0",
+  "pymatching_version": "2.4.0",
+  "circuit_sha256": "e379df2b3b6aa9ffd01da1b9a01cc240333b0467c105442ead93f369e4621e43",
+  "sha256": "4a9f6a2c78d0ca163bbb6e912e4c488d08362b7edd546eb1afa17612f86ab2c1",
+  "file": "train_d3_x_uniform_p0.012000_n20000.npz",
+  "target": "single final logical-observable flip, not detector parity",
+  "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+  "postrun_replay_verified": true
+}

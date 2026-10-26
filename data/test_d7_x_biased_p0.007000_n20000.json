@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+  "setting": {
+    "distance": 7,
+    "noise": 0.007,
+    "profile": "biased",
+    "basis": "x"
+  },
+  "split": "test",
+  "seed": 9572810923000634609,
+  "shots": 20000,
+  "stim_version": "1.16.0",
+  "pymatching_version": "2.4.0",
+  "circuit_sha256": "4f18077a941e60719218573c545ca72a74124e18c005b3dccbb1cc0b1a14d396",
+  "sha256": "0c946452e3d63307aa98363ae88ab4b6a587db137045cf9353efbf9c3686a593",
+  "file": "test_d7_x_biased_p0.007000_n20000.npz",
+  "target": "single final logical-observable flip, not detector parity",
+  "postrun_replay_verified": true
+}

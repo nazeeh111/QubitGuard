@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "setting": {
+    "distance": 5,
+    "noise": 0.012,
+    "profile": "uniform",
+    "basis": "x"
+  },
+  "split": "validation",
+  "seed": 6532507815073232712,
+  "shots": 8000,
+  "stim_version": "1.16.0",
+  "pymatching_version": "2.4.0",
+  "circuit_sha256": "cfa5fc4776900dc0151f5a3772829a394a953a9d9a59dacc699192c933047b58",
+  "sha256": "620aab8a809c93b924bce52e259f738802cd4550dbe7ddbdac1b3f512e245db3",
+  "file": "validation_d5_x_uniform_p0.012000_n8000.npz",
+  "target": "single final logical-observable flip, not detector parity",
+  "generator_sha256": "42f22bac344a88b8fefdcda78509079f2ea3c1e278f8aec11e99e4d441980298",
+  "postrun_replay_verified": true
+}

@@ -1,0 +1,22 @@
+name: Reproducibility or software issue
+description: Report a failing command, incorrect scientific output, or simulator bug.
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the exact command, configuration, seed and expected versus observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Python, installed package versions and the Git commit or release.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Attach a minimal log, traceback or artifact reference. Remove private information.

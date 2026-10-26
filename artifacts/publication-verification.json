@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "tests_passed": 45,
+  "warning": "One Starlette/httpx dependency deprecation, no failed tests.",
+  "scope": "Publication integrity and future-run provenance changes; original primary training source, weights and numerical result artifacts remain unchanged.",
+  "preserved_primary_source_sha256": "843cdf6772a030bdfb2078c4b77b0421eb22d1bc670a01c0b84e1a5408b8f212",
+  "changes": [
+    "Fail-closed release manifest verification including absent files",
+    "Portable read-only reconciliation of all 322 result rows and 406 comparisons",
+    "Fresh follow-up executed-source snapshot and raw-prediction hashes",
+    "Explicit exact-environment evaluation limitation including Linux CPU version suffix",
+    "Public log path redactions documented separately; originals preserved privately",
+    "Visual README, results overview, citation/package metadata and Linux/macOS CI"
+  ],
+  "scientific_execution_record": "verification.json",
+  "redactions": "publication-redactions.json",
+  "remote_ci": "See the GitHub Actions runs for the corresponding public commit; this record reports local tests only."
+}

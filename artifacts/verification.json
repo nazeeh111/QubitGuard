@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "tests": {
+    "passed": 35,
+    "returncode": 0,
+    "warning": "Starlette/httpx dependency deprecation; no failed tests",
+    "log": "test-results.txt"
+  },
+  "counts": {
+    "primary_datasets": 61,
+    "primary_stored_shots": 1152000,
+    "followup_datasets": 14,
+    "followup_test_shots": 280000,
+    "trained_checkpoints": 14,
+    "result_rows": 322,
+    "paired_comparisons": 406
+  },
+  "source_sha256": "843cdf6772a030bdfb2078c4b77b0421eb22d1bc670a01c0b84e1a5408b8f212",
+  "checks": [
+    "dataset/checkpoint checksums and current compatibility signatures",
+    "retained exact circuit/DEM bytes",
+    "all saved failure counts, Wilson intervals and paired comparisons",
+    "follow-up executed source snapshot identity",
+    "checkpoint architecture and parameter counts",
+    "recorded builder retraining/replay audit consistency"
+  ],
+  "primary_test_shots": 840000,
+  "independent_followup_shots": 280000,
+  "distinctions": "Full retraining and full circuit replay are separately retained builder execution records. This verification runs the contracts and reconciles retained numerical artifacts; it is not independent peer review or external-paper replication.",
+  "independent_review": "docs/release-audit.md",
+  "numerical_artifacts_sha256": {
+    "primary": "f1fda24f16200ca8c595800747c8f4cc39558d815d09e847861062b0e00717eb",
+    "followup": "2661822a6ff63681323beffb0d8bce15b60c523e7863061f725e6be96e4db93f"
+  }
+}

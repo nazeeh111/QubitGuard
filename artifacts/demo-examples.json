@@ -1,0 +1,1298 @@
+{
+  "selection": "random reference seed42 plus deliberately selected failure/toggle cases from seeds1..2000. Illustrative only; not benchmark evidence.",
+  "checkpoint_sha256": "4cc810e077bce9fadcc8b118d8c0d208c138c7ee5a64401cda331506c3f4fd4f",
+  "cases": [
+    {
+      "name": "random_reference",
+      "payload": {
+        "distance": 3,
+        "noise": 0.01,
+        "seed": 42,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "shot": {
+        "distance": 3,
+        "rounds": 3,
+        "noise": 0.01,
+        "profile": "uniform",
+        "basis": "x",
+        "seed": 42,
+        "detectors": [
+          {
+            "id": 0,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 1,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 2,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 3,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 0,
+            "event": true
+          },
+          {
+            "id": 4,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 5,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 6,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 7,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 8,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 10,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 12,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 13,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 14,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 2,
+            "event": true
+          },
+          {
+            "id": 15,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 16,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 17,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 19,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 20,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 3,
+            "event": true
+          },
+          {
+            "id": 21,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 22,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 23,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 3,
+            "event": false
+          }
+        ],
+        "qubits": [
+          {
+            "id": 1,
+            "x": 1.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 2,
+            "x": 2.0,
+            "y": 0.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 3,
+            "x": 3.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 5,
+            "x": 5.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 8,
+            "x": 1.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 10,
+            "x": 3.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 12,
+            "x": 5.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 13,
+            "x": 6.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 14,
+            "x": 0.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 15,
+            "x": 1.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 16,
+            "x": 2.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 17,
+            "x": 3.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 19,
+            "x": 5.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 25,
+            "x": 4.0,
+            "y": 6.0,
+            "role": "ancilla"
+          }
+        ],
+        "injected_errors": [
+          {
+            "mechanism": 29,
+            "detectors": [
+              3
+            ],
+            "logical": 0,
+            "probability": 0.021690311111111037,
+            "instruction": "Z_ERROR(0.01) 19[coords 5,5]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              19
+            ],
+            "paulis": [
+              "Z"
+            ],
+            "tick": 0,
+            "explanation": "ExplainedError {\n    dem_error_terms: D3[coords 4,6,0]\n    CircuitErrorLocation {\n        flipped_pauli_product: Z19[coords 5,5]\n        Circuit location stack trace:\n            (after 0 TICKs)\n            at instruction #19 (Z_ERROR) in the circuit\n            at target #9 of the instruction\n            resolving to Z_ERROR(0.01) 19[coords 5,5]\n    }\n}"
+          },
+          {
+            "mechanism": 206,
+            "detectors": [
+              14,
+              20
+            ],
+            "logical": 0,
+            "probability": 0.005333333333333312,
+            "instruction": "DEPOLARIZE2(0.01) 2[coords 2,0] 3[coords 3,1]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              3
+            ],
+            "paulis": [
+              "Z"
+            ],
+            "tick": 16,
+            "explanation": "ExplainedError {\n    dem_error_terms: D14[coords 4,2,2] D20[coords 2,0,3]\n    CircuitErrorLocation {\n        flipped_pauli_product: Z3[coords 3,1]\n        Circuit location stack trace:\n            (after 16 TICKs)\n            at instruction #49 (a REPEAT 2 block) in the circuit\n            after 1 completed iterations\n            at instruction #7 (DEPOLARIZE2) in the REPEAT block\n            at targets #1 to #2 of the instruction\n            resolving to DEPOLARIZE2(0.01) 2[coords 2,0] 3[coords 3,1]\n    }\n}"
+          }
+        ],
+        "corrections": {
+          "standard": [
+            {
+              "a": 3,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 14,
+              "b": 20,
+              "logical": 0
+            }
+          ],
+          "correlated": [
+            {
+              "a": 3,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 14,
+              "b": 20,
+              "logical": 0
+            }
+          ],
+          "neural": [
+            {
+              "a": 3,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 14,
+              "b": 20,
+              "logical": 0
+            }
+          ]
+        },
+        "predictions": {
+          "standard": 0,
+          "correlated": 0,
+          "neural": 0,
+          "neural_probability": 0.13872236013412476,
+          "logical_toggle": 0,
+          "actual": 0
+        },
+        "success": {
+          "standard": true,
+          "correlated": true,
+          "neural": true
+        },
+        "certificate": {
+          "standard": true,
+          "correlated": true,
+          "neural": true
+        },
+        "model": {
+          "name": "FrameNet residual",
+          "supported": true,
+          "parameters": 4209,
+          "training_noise": [
+            0.003,
+            0.007,
+            0.012
+          ],
+          "trained_basis": "x",
+          "threshold": 0.82,
+          "seed": 17,
+          "score_kind": "class-weighted residual sigmoid, uncalibrated",
+          "out_of_distribution": false
+        },
+        "latency_us": {
+          "standard": 139.542,
+          "correlated": 258.792,
+          "neural_total": 464.708
+        },
+        "trace_note": "Sampled circuit-derived detector-error-model mechanisms. Physical fault locations are one Stim explanatory representative, not a unique underlying circuit trajectory. Correction edges are graphlike DEM representatives, not literal physical-qubit paths. Neural correction XORs a verified closed logical graph cycle when its learned logical-frame toggle is 1. Timing excludes sampling, certificates and HTTP; this single request is not a benchmark.",
+        "provenance": {
+          "stim_version": "1.16.0",
+          "circuit_sha256": "156938c69ea77a0053ce60d953a75718fe72eddfb652794b5b2249143203bee2"
+        }
+      }
+    },
+    {
+      "name": "logical_failure",
+      "payload": {
+        "distance": 3,
+        "noise": 0.012,
+        "seed": 4,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "shot": {
+        "distance": 3,
+        "rounds": 3,
+        "noise": 0.012,
+        "profile": "uniform",
+        "basis": "x",
+        "seed": 4,
+        "detectors": [
+          {
+            "id": 0,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 1,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 2,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 3,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 4,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 5,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 6,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 7,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 8,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 10,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 12,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 2,
+            "event": true
+          },
+          {
+            "id": 13,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 14,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 15,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 16,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 17,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 19,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 20,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 21,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 22,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 3,
+            "event": true
+          },
+          {
+            "id": 23,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 3,
+            "event": false
+          }
+        ],
+        "qubits": [
+          {
+            "id": 1,
+            "x": 1.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 2,
+            "x": 2.0,
+            "y": 0.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 3,
+            "x": 3.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 5,
+            "x": 5.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 8,
+            "x": 1.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 10,
+            "x": 3.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 12,
+            "x": 5.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 13,
+            "x": 6.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 14,
+            "x": 0.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 15,
+            "x": 1.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 16,
+            "x": 2.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 17,
+            "x": 3.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 19,
+            "x": 5.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 25,
+            "x": 4.0,
+            "y": 6.0,
+            "role": "ancilla"
+          }
+        ],
+        "injected_errors": [
+          {
+            "mechanism": 170,
+            "detectors": [
+              12,
+              20
+            ],
+            "logical": 0,
+            "probability": 0.04031416306784043,
+            "instruction": "X_ERROR(0.012) 2[coords 2,0]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              2
+            ],
+            "paulis": [
+              "X"
+            ],
+            "tick": 14,
+            "explanation": "ExplainedError {\n    dem_error_terms: D12[coords 2,0,2] D20[coords 2,0,3]\n    CircuitErrorLocation {\n        flipped_pauli_product: X2[coords 2,0]\n        Circuit location stack trace:\n            (after 14 TICKs)\n            at instruction #49 (a REPEAT 2 block) in the circuit\n            after 0 completed iterations\n            at instruction #23 (X_ERROR) in the REPEAT block\n            at target #1 of the instruction\n            resolving to X_ERROR(0.012) 2[coords 2,0]\n    }\n}"
+          },
+          {
+            "mechanism": 269,
+            "detectors": [
+              20,
+              22
+            ],
+            "logical": 0,
+            "probability": 0.015133258719470424,
+            "instruction": "DEPOLARIZE2(0.012) 11[coords 4,2] 3[coords 3,1]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              3
+            ],
+            "paulis": [
+              "Z"
+            ],
+            "tick": 19,
+            "explanation": "ExplainedError {\n    dem_error_terms: D20[coords 2,0,3] D22[coords 4,2,3]\n    CircuitErrorLocation {\n        flipped_pauli_product: Z3[coords 3,1]\n        Circuit location stack trace:\n            (after 19 TICKs)\n            at instruction #49 (a REPEAT 2 block) in the circuit\n            after 1 completed iterations\n            at instruction #16 (DEPOLARIZE2) in the REPEAT block\n            at targets #3 to #4 of the instruction\n            resolving to DEPOLARIZE2(0.012) 11[coords 4,2] 3[coords 3,1]\n    }\n}"
+          }
+        ],
+        "corrections": {
+          "standard": [
+            {
+              "a": 12,
+              "b": null,
+              "logical": 1
+            },
+            {
+              "a": 22,
+              "b": null,
+              "logical": 0
+            }
+          ],
+          "correlated": [
+            {
+              "a": 12,
+              "b": null,
+              "logical": 1
+            },
+            {
+              "a": 22,
+              "b": null,
+              "logical": 0
+            }
+          ],
+          "neural": [
+            {
+              "a": 12,
+              "b": null,
+              "logical": 1
+            },
+            {
+              "a": 22,
+              "b": null,
+              "logical": 0
+            }
+          ]
+        },
+        "predictions": {
+          "standard": 1,
+          "correlated": 1,
+          "neural": 1,
+          "neural_probability": 0.32598093152046204,
+          "logical_toggle": 0,
+          "actual": 0
+        },
+        "success": {
+          "standard": false,
+          "correlated": false,
+          "neural": false
+        },
+        "certificate": {
+          "standard": true,
+          "correlated": true,
+          "neural": true
+        },
+        "model": {
+          "name": "FrameNet residual",
+          "supported": true,
+          "parameters": 4209,
+          "training_noise": [
+            0.003,
+            0.007,
+            0.012
+          ],
+          "trained_basis": "x",
+          "threshold": 0.82,
+          "seed": 17,
+          "score_kind": "class-weighted residual sigmoid, uncalibrated",
+          "out_of_distribution": false
+        },
+        "latency_us": {
+          "standard": 143.583,
+          "correlated": 226.417,
+          "neural_total": 511.917
+        },
+        "trace_note": "Sampled circuit-derived detector-error-model mechanisms. Physical fault locations are one Stim explanatory representative, not a unique underlying circuit trajectory. Correction edges are graphlike DEM representatives, not literal physical-qubit paths. Neural correction XORs a verified closed logical graph cycle when its learned logical-frame toggle is 1. Timing excludes sampling, certificates and HTTP; this single request is not a benchmark.",
+        "provenance": {
+          "stim_version": "1.16.0",
+          "circuit_sha256": "e379df2b3b6aa9ffd01da1b9a01cc240333b0467c105442ead93f369e4621e43"
+        }
+      }
+    },
+    {
+      "name": "logical_toggle_success",
+      "payload": {
+        "distance": 3,
+        "noise": 0.007,
+        "seed": 75,
+        "profile": "uniform",
+        "basis": "x"
+      },
+      "shot": {
+        "distance": 3,
+        "rounds": 3,
+        "noise": 0.007,
+        "profile": "uniform",
+        "basis": "x",
+        "seed": 75,
+        "detectors": [
+          {
+            "id": 0,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 1,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 0,
+            "event": true
+          },
+          {
+            "id": 2,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 0,
+            "event": true
+          },
+          {
+            "id": 3,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 0,
+            "event": false
+          },
+          {
+            "id": 4,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 5,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 6,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 7,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 8,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 1,
+            "event": true
+          },
+          {
+            "id": 10,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 1,
+            "event": false
+          },
+          {
+            "id": 12,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 2,
+            "event": true
+          },
+          {
+            "id": 13,
+            "x": 2.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 14,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 15,
+            "x": 6.0,
+            "y": 2.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 16,
+            "x": 0.0,
+            "y": 4.0,
+            "t": 2,
+            "event": true
+          },
+          {
+            "id": 17,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 19,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 2,
+            "event": false
+          },
+          {
+            "id": 20,
+            "x": 2.0,
+            "y": 0.0,
+            "t": 3,
+            "event": true
+          },
+          {
+            "id": 21,
+            "x": 2.0,
+            "y": 4.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 22,
+            "x": 4.0,
+            "y": 2.0,
+            "t": 3,
+            "event": false
+          },
+          {
+            "id": 23,
+            "x": 4.0,
+            "y": 6.0,
+            "t": 3,
+            "event": false
+          }
+        ],
+        "qubits": [
+          {
+            "id": 1,
+            "x": 1.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 2,
+            "x": 2.0,
+            "y": 0.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 3,
+            "x": 3.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 5,
+            "x": 5.0,
+            "y": 1.0,
+            "role": "data"
+          },
+          {
+            "id": 8,
+            "x": 1.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 9,
+            "x": 2.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 10,
+            "x": 3.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 11,
+            "x": 4.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 12,
+            "x": 5.0,
+            "y": 3.0,
+            "role": "data"
+          },
+          {
+            "id": 13,
+            "x": 6.0,
+            "y": 2.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 14,
+            "x": 0.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 15,
+            "x": 1.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 16,
+            "x": 2.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 17,
+            "x": 3.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 18,
+            "x": 4.0,
+            "y": 4.0,
+            "role": "ancilla"
+          },
+          {
+            "id": 19,
+            "x": 5.0,
+            "y": 5.0,
+            "role": "data"
+          },
+          {
+            "id": 25,
+            "x": 4.0,
+            "y": 6.0,
+            "role": "ancilla"
+          }
+        ],
+        "injected_errors": [
+          {
+            "mechanism": 3,
+            "detectors": [
+              1,
+              2
+            ],
+            "logical": 0,
+            "probability": 0.01524804337777797,
+            "instruction": "Z_ERROR(0.007) 10[coords 3,3]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              10
+            ],
+            "paulis": [
+              "Z"
+            ],
+            "tick": 0,
+            "explanation": "ExplainedError {\n    dem_error_terms: D1[coords 2,4,0] D2[coords 4,2,0]\n    CircuitErrorLocation {\n        flipped_pauli_product: Z10[coords 3,3]\n        Circuit location stack trace:\n            (after 0 TICKs)\n            at instruction #19 (Z_ERROR) in the circuit\n            at target #5 of the instruction\n            resolving to Z_ERROR(0.007) 10[coords 3,3]\n    }\n}"
+          },
+          {
+            "mechanism": 136,
+            "detectors": [
+              9,
+              16
+            ],
+            "logical": 1,
+            "probability": 0.0014032799436091415,
+            "instruction": "DEPOLARIZE2(0.007) 15[coords 1,5] 14[coords 0,4]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              15
+            ],
+            "paulis": [
+              "Y"
+            ],
+            "tick": 9,
+            "explanation": "ExplainedError {\n    dem_error_terms: D9[coords 2,4,1] D16[coords 0,4,2] L0\n    CircuitErrorLocation {\n        flipped_pauli_product: Y15[coords 1,5]\n        Circuit location stack trace:\n            (after 9 TICKs)\n            at instruction #49 (a REPEAT 2 block) in the circuit\n            after 0 completed iterations\n            at instruction #7 (DEPOLARIZE2) in the REPEAT block\n            at targets #7 to #8 of the instruction\n            resolving to DEPOLARIZE2(0.007) 15[coords 1,5] 14[coords 0,4]\n    }\n}"
+          },
+          {
+            "mechanism": 170,
+            "detectors": [
+              12,
+              20
+            ],
+            "logical": 0,
+            "probability": 0.023826513342311794,
+            "instruction": "X_ERROR(0.007) 2[coords 2,0]",
+            "gate": "Stim representative fault",
+            "qubits": [
+              2
+            ],
+            "paulis": [
+              "X"
+            ],
+            "tick": 14,
+            "explanation": "ExplainedError {\n    dem_error_terms: D12[coords 2,0,2] D20[coords 2,0,3]\n    CircuitErrorLocation {\n        flipped_pauli_product: X2[coords 2,0]\n        Circuit location stack trace:\n            (after 14 TICKs)\n            at instruction #49 (a REPEAT 2 block) in the circuit\n            after 0 completed iterations\n            at instruction #23 (X_ERROR) in the REPEAT block\n            at target #1 of the instruction\n            resolving to X_ERROR(0.007) 2[coords 2,0]\n    }\n}"
+          }
+        ],
+        "corrections": {
+          "standard": [
+            {
+              "a": 1,
+              "b": 9,
+              "logical": 0
+            },
+            {
+              "a": 2,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 16,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 12,
+              "b": 20,
+              "logical": 0
+            }
+          ],
+          "correlated": [
+            {
+              "a": 1,
+              "b": 2,
+              "logical": 0
+            },
+            {
+              "a": 9,
+              "b": null,
+              "logical": 1
+            },
+            {
+              "a": 16,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 12,
+              "b": 20,
+              "logical": 0
+            }
+          ],
+          "neural": [
+            {
+              "a": 1,
+              "b": 2,
+              "logical": 0
+            },
+            {
+              "a": 1,
+              "b": 9,
+              "logical": 0
+            },
+            {
+              "a": 1,
+              "b": null,
+              "logical": 1
+            },
+            {
+              "a": 16,
+              "b": null,
+              "logical": 0
+            },
+            {
+              "a": 12,
+              "b": 20,
+              "logical": 0
+            }
+          ]
+        },
+        "predictions": {
+          "standard": 0,
+          "correlated": 1,
+          "neural": 1,
+          "neural_probability": 0.85951828956604,
+          "logical_toggle": 1,
+          "actual": 1
+        },
+        "success": {
+          "standard": false,
+          "correlated": true,
+          "neural": true
+        },
+        "certificate": {
+          "standard": true,
+          "correlated": true,
+          "neural": true
+        },
+        "model": {
+          "name": "FrameNet residual",
+          "supported": true,
+          "parameters": 4209,
+          "training_noise": [
+            0.003,
+            0.007,
+            0.012
+          ],
+          "trained_basis": "x",
+          "threshold": 0.82,
+          "seed": 17,
+          "score_kind": "class-weighted residual sigmoid, uncalibrated",
+          "out_of_distribution": false
+        },
+        "latency_us": {
+          "standard": 172.333,
+          "correlated": 253.167,
+          "neural_total": 390.042
+        },
+        "trace_note": "Sampled circuit-derived detector-error-model mechanisms. Physical fault locations are one Stim explanatory representative, not a unique underlying circuit trajectory. Correction edges are graphlike DEM representatives, not literal physical-qubit paths. Neural correction XORs a verified closed logical graph cycle when its learned logical-frame toggle is 1. Timing excludes sampling, certificates and HTTP; this single request is not a benchmark.",
+        "provenance": {
+          "stim_version": "1.16.0",
+          "circuit_sha256": "9b7ca11137d3fc08fcd5e0a4b5e7cf14fbf18b91b66380c4d92f143334a0ce83"
+        }
+      }
+    }
+  ]
+}
