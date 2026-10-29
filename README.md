@@ -213,7 +213,7 @@ scripts/         replay, report generation and local launch helpers
 
 Original implementation, synthetic datasets and newly trained checkpoints:
 [MIT](LICENSE). External dependencies retain their licenses. See
-[notices](THIRD_PARTY_NOTICES.md) and
+[license and artifact rights](LICENSE) and
 [BibTeX references](docs/references.bib). The repository includes the complete
 experiment artifacts without Git LFS or gated downloads. Scientific execution
 records preserve the original local study; current GitHub Actions runs are

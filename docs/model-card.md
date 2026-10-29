@@ -49,4 +49,4 @@ hybrid calls matching before the neural model; include that cost in latency.
 
 **License:** original QubitGuard weights and synthetic data use the project MIT
 license. NVIDIA weights were neither downloaded nor used. External dependency
-terms remain separate. See `THIRD_PARTY_NOTICES.md` and primary citations.
+terms remain separate. See `LICENSE` and primary citations.
