@@ -1,7 +1,6 @@
 """One command per reproducible stage; no downloads or external services at runtime."""
 import argparse,json
 from pathlib import Path
-import yaml
 
 def main():
     parser=argparse.ArgumentParser(prog='qubitguard')
@@ -13,6 +12,13 @@ def main():
     parser.add_argument('--seed',type=int,default=17)
     parser.add_argument('--port',type=int,default=8917)
     args=parser.parse_args(); root=args.root.resolve()
+    if args.command=='verify':
+        from .integrity import verify_release
+        result=verify_release(root)
+        print(json.dumps(result))
+        if result['checksum_failures']: raise SystemExit(1)
+        return
+    import yaml
     cfg=yaml.safe_load((root/args.config).read_text())
     from .provenance import validate_config
     validate_config(cfg)
@@ -43,10 +49,5 @@ def main():
         import os,uvicorn
         os.environ['QUBITGUARD_ROOT']=str(root)
         uvicorn.run('qubitguard.server:app',host='127.0.0.1',port=args.port,workers=1)
-    if args.command=='verify':
-        from .integrity import verify_release
-        result=verify_release(root)
-        print(json.dumps(result))
-        if result['checksum_failures']: raise SystemExit(1)
 
 if __name__=='__main__': main()
