@@ -1,76 +1,17 @@
-<p align="center">
-  <img src="docs/assets/qubitguard-banner.svg" alt="QubitGuard: learn the syndrome, verify the recovery" width="100%">
-</p>
-
-<p align="center">
-  <a href="https://github.com/nazeeh111/QubitGuard/actions/workflows/tests.yml"><img src="https://github.com/nazeeh111/QubitGuard/actions/workflows/tests.yml/badge.svg" alt="Scientific contracts CI"></a>
-  <a href="https://github.com/nazeeh111/QubitGuard/releases"><img src="https://img.shields.io/github/v/release/nazeeh111/QubitGuard?color=315b48" alt="Latest release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-315b48" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/compute-CPU-315b48" alt="CPU only">
-</p>
-
-<p align="center">
-  <a href="#run-the-playground">Quick start</a> ·
-  <a href="docs/technical-report.pdf">Technical report</a> ·
-  <a href="docs/results.md">Results at a glance</a> ·
-  <a href="docs/research-foundations.md">Research foundations</a> ·
-  <a href="https://github.com/nazeeh111/QubitGuard/releases/latest">Download release</a>
-</p>
-
 # QubitGuard
 
-**A reproducible CPU-scale laboratory for learned surface-code decoding.**
+**Compare learned and graph-based quantum error correction on a CPU.**
 
-QubitGuard generates noisy quantum error-correction circuits with Stim, trains
-an original compact PyTorch logical-frame model, and compares it with standard
-and correlated PyMatching on identical independent test shots. The interactive
-playground runs the real simulator and shows detector histories, graph
-corrections, neural logical adjustments and scored outcomes.
+Generate noisy circuits with Stim, replay detector histories and compare a compact PyTorch model with two PyMatching baselines on identical test shots. Included checkpoints run locally without training or quantum hardware.
 
-This is classical machine learning applied to quantum error correction. It
-requires no quantum hardware, paid API, external account or GPU. The project
-is an engineering research study, not a claim of a new decoding record.
+[Run the playground](#run-the-playground) · [Measured result](#measured-result) · [Results](docs/results.md) · [Technical report](docs/technical-report.pdf) · [Research foundations](docs/research-foundations.md) · [MIT license](LICENSE) · [Release](https://github.com/nazeeh111/QubitGuard/releases/latest)
+
+This is an engineering research study. The retained experiment does not establish an advantage over correlated matching.
 
 [![Live Stim decoding playground](figures/playground.png)](#run-the-playground)
 
 *Actual simulator output, including syndrome history, graph recoveries and a
 scored logical outcome. Run locally to change the circuit and replay shots.*
-
-## Evidence and scope
-
-- 14 trained checkpoints: three initialization seeds at each of
-  d3/d5/d7, four d3 controls, and one full-map readout revision.
-- 60,000 training shots and 24,000 validation shots per distance; 10 epochs.
-- 840,000 primary test shots across 42 exact circuit/noise settings, plus
-  280,000 new independent shots for the readout follow-up.
-- Strong matching baselines use the true test circuit's noise model.
-- Wilson confidence intervals, paired comparisons, multiplicity adjustment,
-  ablations, seed variation, training cost and complete CPU inference cost.
-- Reusable NPZ data, exact Stim/DEM files, source/configuration fingerprints,
-  checkpoint checksums and a full d3 bitwise retraining check.
-- Tests independently reconstruct fault traces, syndrome parity and logical
-  predictions. A valid syndrome certificate is distinct from logical success.
-
-See the [technical report](docs/technical-report.pdf), its
-[editable text](docs/technical-report.md), [model card](docs/model-card.md),
-[data card](docs/data-card.md), [independent review](docs/review-notes.md),
-and [primary-source research](docs/research-foundations.md).
-The [original scientific verification record](artifacts/verification.json) records
-35 passing contracts, 322 reconciled result rows and 406 paired comparisons.
-Additional publication integrity tests protect against missing and corrupted
-release files; the live CI badge above reports the current suite.
-Exact numerical results live in [benchmark.csv](artifacts/benchmark.csv) and
-[paired-comparisons.csv](artifacts/paired-comparisons.csv).
-
-## Measured result
-
-The compact hybrid does not establish an advantage over correlated matching
-after adjustment for the 364 primary paired comparisons. At uniform p=0.007,
-d3 failures are 706/20,000 for the hybrid and 705/20,000 for correlated matching.
-The hybrid adds CPU cost and degrades at some shifted high-noise settings.
-A larger readout also failed to improve its new independent test mixture.
-These negative results, ablations and checkpoints are retained; correlated
-PyMatching is the recommended decoder for these measured conditions.
 
 ## Run the playground
 
@@ -114,6 +55,42 @@ seed75 (learned logical toggle agrees with correlated matching and repairs a
 standard-matching mistake). The latter two are deliberately selected teaching
 cases, not benchmark evidence. Full traces are in
 [demo-examples.json](artifacts/demo-examples.json).
+
+## Measured result
+
+The compact hybrid does not establish an advantage over correlated matching
+after adjustment for the 364 primary paired comparisons. At uniform p=0.007,
+d3 failures are 706/20,000 for the hybrid and 705/20,000 for correlated matching.
+The hybrid adds CPU cost and degrades at some shifted high-noise settings.
+A larger readout also failed to improve its new independent test mixture.
+These negative results, ablations and checkpoints are retained; correlated
+PyMatching is the recommended decoder for these measured conditions.
+
+## Evidence and scope
+
+- 14 trained checkpoints: three initialization seeds at each of
+  d3/d5/d7, four d3 controls, and one full-map readout revision.
+- 60,000 training shots and 24,000 validation shots per distance; 10 epochs.
+- 840,000 primary test shots across 42 exact circuit/noise settings, plus
+  280,000 new independent shots for the readout follow-up.
+- Strong matching baselines use the true test circuit's noise model.
+- Wilson confidence intervals, paired comparisons, multiplicity adjustment,
+  ablations, seed variation, training cost and complete CPU inference cost.
+- Reusable NPZ data, exact Stim/DEM files, source/configuration fingerprints,
+  checkpoint checksums and a full d3 bitwise retraining check.
+- Tests independently reconstruct fault traces, syndrome parity and logical
+  predictions. A valid syndrome certificate is distinct from logical success.
+
+See the [technical report](docs/technical-report.pdf), its
+[editable text](docs/technical-report.md), [model card](docs/model-card.md),
+[data card](docs/data-card.md), [independent review](docs/review-notes.md),
+and [primary-source research](docs/research-foundations.md).
+The [original scientific verification record](artifacts/verification.json) records
+35 passing contracts, 322 reconciled result rows and 406 paired comparisons.
+Additional publication integrity tests protect against missing and corrupted
+release files; the [test workflow](https://github.com/nazeeh111/QubitGuard/actions/workflows/tests.yml) reports the current suite.
+Exact numerical results live in [benchmark.csv](artifacts/benchmark.csv) and
+[paired-comparisons.csv](artifacts/paired-comparisons.csv).
 
 ## Reproduce and extend
 
@@ -217,7 +194,7 @@ Original implementation, synthetic datasets and newly trained checkpoints:
 [BibTeX references](docs/references.bib). The repository includes the complete
 experiment artifacts without Git LFS or gated downloads. Scientific execution
 records preserve the original local study; current GitHub Actions runs are
-linked by the CI badge. See [release notes](CHANGELOG.md) for the publication
+linked in the [test workflow](https://github.com/nazeeh111/QubitGuard/actions/workflows/tests.yml). See [release notes](CHANGELOG.md) for the publication
 changes and [limitations and next experiments](docs/results.md#limitations-and-next-experiments)
 for the unresolved research questions.
 
