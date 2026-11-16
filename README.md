@@ -15,6 +15,8 @@ scored logical outcome. Run locally to change the circuit and replay shots.*
 
 ## Run the playground
 
+Current source is the unreleased **0.1.1.dev0** generation. Identify the installed command with `qubitguard --version`; API metadata and the desktop runtime badge show the same generation. The original 0.1.0 release, studies, checkpoints and scientific verification records retain their original scope.
+
 Clone the repository first. Python 3.13 and `uv` are recommended. The exact tested package versions are
 recorded in `requirements-lock.txt`; platform behavior can differ.
 
@@ -44,6 +46,15 @@ the three decoder outcomes. A measurement-heavy profile and unseen noise
 strengths expose distribution shift. Neural Z-memory output is explicitly
 unavailable; both classical baselines remain functional.
 
+On narrow screens, the benchmark chart and numerical table scroll horizontally.
+Tab to either named view and use Left/Right Arrow. The detector-history slider
+selects the displayed round; it changes the view, not the sampled shot.
+
+For the uniform examples, `d3` means code distance 3 and `p` is the nominal
+probability used for each of the modeled circuit-noise channels, not a measured
+hardware error rate. A valid syndrome certificate checks detector parity; it
+does not by itself mean the predicted logical outcome is correct.
+
 Displayed physical fault locations are one Stim explanation of each sampled
 DEM mechanism, not unique microscopic observations. Corrections are graphlike
 DEM representatives. The neural branch predicts a logical-frame toggle, not a
@@ -55,6 +66,22 @@ seed75 (learned logical toggle agrees with correlated matching and repairs a
 standard-matching mistake). The latter two are deliberately selected teaching
 cases, not benchmark evidence. Full traces are in
 [demo-examples.json](artifacts/demo-examples.json).
+
+## Save one shot from the CLI
+
+Use the same admitted simulator without starting a server or training a model:
+
+```bash
+.venv/bin/qubitguard verify --root "$PWD"
+.venv/bin/qubitguard simulate --root "$PWD" --distance 3 \
+  --noise 0.007 --seed 75 --profile uniform --basis x --out shot.json
+```
+
+`shot.json` is a data-only `qubitguard.shot/v1` record with the producing software version and the existing simulator response: settings, syndrome, corrections, predictions, certificates, provenance and measured request timings. Exit 0 means the record was produced, even if a decoder's logical outcome failed. Invalid parameters or an existing output path exit 2; existing files are preserved. Omit `--out` to print JSON. The destination's parent must exist. Keep a completed record before trying another seed; interrupted output publication can leave a partial new file.
+
+Repeat the settings in the same pinned simulator environment to reproduce the scientific fields; per-call latency is expected to differ. Seed equality is not promised across implementations, machines or call structures. Neural Z-memory output remains unavailable. A single shot and its timings are teaching/inspection evidence, not a benchmark, error-rate estimate or hardware observation.
+
+A wheel contains the Python package, **not the full source release's web client, configurations, checkpoints or studies**. Keep the corresponding complete source archive and pass its extracted path with `--root` to `serve`, `simulate` and `verify`, including when invoking an installed command elsewhere. `serve` prints its actual root; it does not open a browser. Use `verify` first to check every entry in that root's current unsigned checksum list. This checks consistency, not authentication or a new execution of the original study. `train`, `run`, `evaluate`, `followup`, `latency` and `plot` retain their research-stage behavior; they are not required for this first run.
 
 ## Measured result
 

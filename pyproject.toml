@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qubitguard"
-version = "0.1.0"
+version = "0.1.1.dev0"
 description = "Reproducible CPU-scale neural surface-code decoding laboratory"
 readme = "README.md"
 license = "MIT"

@@ -11,6 +11,12 @@ def wilson(k, n, z=1.959963984540054):
     return (0. if k==0 else max(0.,mid-half)),(1. if k==n else min(1.,mid+half))
 
 def paired(a,b,truth):
+    a, b, truth = (np.asarray(x) for x in (a, b, truth))
+    if (truth.ndim != 1 or not truth.size or a.shape != truth.shape
+            or b.shape != truth.shape):
+        raise ValueError('Paired observations must be nonempty one-dimensional arrays of equal length')
+    if not all(np.isin(x, (0, 1)).all() for x in (a, b, truth)):
+        raise ValueError('Paired observations must contain only binary values')
     ea=np.asarray(a)!=truth; eb=np.asarray(b)!=truth
     wins=int(np.sum(~ea & eb)); losses=int(np.sum(ea & ~eb)); n=len(truth)
     delta=(losses-wins)/n

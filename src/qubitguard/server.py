@@ -12,9 +12,10 @@ from typing import Literal
 from .simulation import Setting,Decoder,context_features
 from .training import load_model
 from .data import digest
+from . import __version__
 
 ROOT=Path(os.environ.get('QUBITGUARD_ROOT',Path(__file__).resolve().parents[2])).resolve()
-app=FastAPI(title='QubitGuard local research laboratory',version='0.1.0')
+app=FastAPI(title='QubitGuard local research laboratory',version=__version__)
 torch.set_num_threads(4)
 SIMULATION_LOCK=threading.RLock()
 
@@ -38,7 +39,7 @@ def model_for(distance,mtime):
 
 @app.get('/api/meta')
 def meta():
-    return dict(distances=[3,5,7],name='QubitGuard',version='0.1.0',rounds='distance',neural_basis='x',
+    return dict(distances=[3,5,7],name='QubitGuard',version=__version__,rounds='distance',neural_basis='x',
                 results='/api/results',simulation='live Stim circuit-derived DEM sampling',
                 benchmarks_available=(ROOT/'artifacts'/'benchmark.json').exists())
 
