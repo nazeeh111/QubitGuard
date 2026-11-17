@@ -8,10 +8,14 @@ Generate noisy circuits with Stim, replay detector histories and compare a compa
 
 This is an engineering research study. The retained experiment does not establish an advantage over correlated matching.
 
-[![Live Stim decoding playground](figures/playground.png)](#run-the-playground)
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/logical-class-mobile.png">
+  <img src="docs/presentation/logical-class.png" alt="Selected simulated d3 X-memory shot, seed75: all three recoveries satisfy detector parity. Standard matching predicts logical0 and fails; correlated matching and FrameNet predict the true logical1. The hybrid toggles the standard recovery with a closed odd-logical graph cycle.">
+</picture>
 
-*Actual simulator output, including syndrome history, graph recoveries and a
-scored logical outcome. Run locally to change the circuit and replay shots.*
+**A valid syndrome correction can still be logically wrong.** This retained shot gives all three decoders the same 24 detector bits. Standard matching predicts `0`; correlated matching and the hybrid predict the simulated truth, `1`. The hybrid changes logical class by XORing a closed graph cycle, while preserving detector parity. This is a deliberately selected teaching case, not evidence of decoder advantage. The retained d3 study at the same nominal noise has **706 hybrid failures versus 705 correlated-matching failures in 20,000 shared shots**; uncertainty and paired comparisons matter.
+
+[Reproduce and inspect the shot](docs/presentation/README.md) · [Raw shot JSON](docs/presentation/selected-toggle.json) · [Vector figure](docs/presentation/logical-class.svg) · [Actual current playground](docs/presentation/playground-current.png)
 
 ## Run the playground
 

@@ -1,0 +1,36 @@
+{
+  "kind": "existing retained checkpoint inference; selected synthetic illustration, not study evidence",
+  "base_commit": "9b9c7885584bedb1ef0965ed9d96b1ea83b01dc7",
+  "base_tree": "396707edf6833e2fcd994683779ce3e840febe74",
+  "checkpoint": "artifacts/d3_residual_s17.pt",
+  "checkpoint_sha256": "4cc810e077bce9fadcc8b118d8c0d208c138c7ee5a64401cda331506c3f4fd4f",
+  "shot_file": "selected-toggle.json",
+  "counterexample_file": "selected-failure.json",
+  "repeat_scientific_fields_equal_excluding_latency": true,
+  "toggle_cycle": [
+    {
+      "a": 1,
+      "b": 2,
+      "logical": 0
+    },
+    {
+      "a": 1,
+      "b": null,
+      "logical": 1
+    },
+    {
+      "a": 2,
+      "b": null,
+      "logical": 0
+    }
+  ],
+  "independent_cycle_check": {
+    "detector_parity": {
+      "2": 0,
+      "1": 0
+    },
+    "logical_xor": 1
+  },
+  "selection": "Existing demo-examples selected seeds75 and4; no search for favorable seeds in this task.",
+  "note": "Graphlike detector-error-model representatives. Boundary parity is free; these are not physical-qubit paths."
+}
