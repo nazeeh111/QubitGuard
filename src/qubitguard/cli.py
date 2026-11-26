@@ -1,7 +1,16 @@
 """One command per reproducible stage; no downloads or external services at runtime."""
 import argparse,json
+import os
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from . import __version__
+
+def _save_shot(path, text):
+    with TemporaryDirectory(prefix='.qubitguard-', dir=path.parent) as directory:
+        staged = Path(directory) / 'shot.json'
+        staged.write_text(text, encoding='utf-8')
+        os.link(staged, path)
+
 
 def main():
     parser=argparse.ArgumentParser(
@@ -46,7 +55,6 @@ def main():
         if any(not path.is_file() for path in required) or not (root/'figures').is_dir():
             parser.exit(2,'qubitguard: incomplete source root; use --root with the full source release (web, configs and artifacts).\n')
     if args.command=='simulate':
-        import os
         os.environ['QUBITGUARD_ROOT']=str(root)
         from pydantic import ValidationError
         from .server import ShotRequest,simulate
@@ -61,8 +69,7 @@ def main():
             print(text,end='')
         else:
             try:
-                with args.out.open('x') as output:
-                    output.write(text)
+                _save_shot(args.out, text)
             except OSError as error:
                 parser.exit(2,f'qubitguard: {error}\n')
             print(str(args.out.resolve()))
@@ -98,7 +105,7 @@ def main():
         from .fullmap import run_followup
         run_followup(root,cfg)
     if args.command=='serve':
-        import os,uvicorn
+        import uvicorn
         os.environ['QUBITGUARD_ROOT']=str(root)
         print(f'QubitGuard {__version__} · http://127.0.0.1:{args.port} · source root: {root}',flush=True)
         uvicorn.run('qubitguard.server:app',host='127.0.0.1',port=args.port,workers=1)
