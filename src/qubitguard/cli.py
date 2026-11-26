@@ -1,15 +1,24 @@
 """One command per reproducible stage; no downloads or external services at runtime."""
 import argparse,json
 import os
+import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from . import __version__
 
 def _save_shot(path, text):
-    with TemporaryDirectory(prefix='.qubitguard-', dir=path.parent) as directory:
-        staged = Path(directory) / 'shot.json'
-        staged.write_text(text, encoding='utf-8')
-        os.link(staged, path)
+    published_directory = None
+    try:
+        with TemporaryDirectory(prefix='.qubitguard-', dir=path.parent) as directory:
+            staged = Path(directory) / 'shot.json'
+            staged.write_text(text, encoding='utf-8')
+            os.link(staged, path)
+            published_directory = directory
+    except OSError as error:
+        if published_directory is None:
+            raise
+        print(f'qubitguard: shot saved to {path}; could not clean staging directory {published_directory}: {error}',
+              file=sys.stderr)
 
 
 def main():
