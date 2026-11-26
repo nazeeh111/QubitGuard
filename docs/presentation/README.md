@@ -18,7 +18,7 @@ The output is a data-only `qubitguard.shot/v1` JSON file. Read it with any JSON 
 .venv/bin/python -c 'import json; s=json.load(open("shot75.json"))["shot"]; print(s["predictions"]); print(s["certificate"]); print(s["success"])'
 ```
 
-An existing destination is preserved and refused, so choose a new path to repeat the command. The two actual exports used for this figure are [selected-toggle.json](selected-toggle.json) and [selected-failure.json](selected-failure.json). Per-request timings are retained as recorded metadata but are not plotted or treated as a latency benchmark. Scientific fields repeated exactly in the same pinned runtime after excluding timings; seeds are not cross-version or cross-machine guarantees. The file has no executable checkpoint state and the playground has no JSON-import control. To replay it there, set the saved settings and simulate again.
+An existing destination is preserved and refused, so choose a new path to repeat the command. The two actual exports used for this figure are [selected-toggle.json](selected-toggle.json) and [selected-failure.json](selected-failure.json). Per-request timings are retained as recorded metadata but are not plotted or treated as a latency benchmark. Scientific fields repeated exactly in the same pinned runtime after excluding timings; seeds are not cross-version or cross-machine guarantees. The file has no executable checkpoint state and the playground has no JSON-import control. The **Logical disagreement** and **All three fail** buttons load the corresponding settings and simulate a fresh shot.
 
 ## Read the detector history
 
@@ -42,6 +42,6 @@ At d3 uniform `p=0.007`, the retained primary test has 20,000 independent shared
 
 ## Actual interface and figure provenance
 
-[Current playground capture](playground-current.png) shows this actual saved-settings replay. Switch decoder tabs to inspect each recovery, select Space-time, and step the detector timeline. Changing the displayed time does not resample the shot. Existing expert controls and defaults are preserved.
+[Original seed-75 playground capture](playground-current.png) shows this actual saved-settings replay. Switch decoder tabs to inspect each recovery, select Space-time, and step the detector timeline. Changing the displayed time does not resample the shot. The current playground opens on seed 75 and retains the custom circuit controls.
 
 [provenance.json](provenance.json) pins the checkpoint, producing source, selected cases and exact toggle-cycle derivation. `python docs/presentation/render.py` regenerates both PNG/SVG sizes using Matplotlib, reading the raw JSON and verifying the retained checkpoint hash. All 24 detector bits and all 8 absent slots are encoded without smoothing, interpolation or aggregation. The figure uses the product's existing green/paper identity, explicit text labels and a portable sans-serif fallback. Important values and semantics are also available in this Markdown and the raw JSON. The included PNGs are rendered scientific diagrams, not screenshots. The linked playground image is an actual browser capture.

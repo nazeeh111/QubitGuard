@@ -1,21 +1,17 @@
 # QubitGuard
 
-**Compare learned and graph-based quantum error correction on a CPU.**
+**Same detector history. Different logical predictions.** In a deliberately selected simulated shot, all three recoveries satisfy the same 24 detector bits. Standard matching predicts `0`. Correlated matching and the FrameNet hybrid predict `1`, the simulated truth.
 
-Generate noisy circuits with Stim, replay detector histories and compare a compact PyTorch model with two PyMatching baselines on identical test shots. Included checkpoints run locally without training or quantum hardware.
+The larger CPU study did not establish a hybrid advantage. At the same nominal noise, the hybrid failed on **706 of 20,000 shared shots**, versus **705** for correlated matching.
 
-[Run the playground](#run-the-playground) · [Measured result](#measured-result) · [Results](docs/results.md) · [Technical report](docs/technical-report.pdf) · [Research foundations](docs/research-foundations.md) · [MIT license](LICENSE) · [Release](https://github.com/nazeeh111/QubitGuard/releases/latest)
-
-This is an engineering research study. The retained experiment does not establish an advantage over correlated matching.
+[Replay both examples locally](#run-the-playground) · [Inspect the saved shots](docs/presentation/README.md) · [Study results](docs/results.md)
 
 <picture>
   <source media="(max-width: 600px)" srcset="docs/presentation/logical-class-mobile.png">
   <img src="docs/presentation/logical-class.png" alt="Selected simulated d3 X-memory shot, seed75: all three recoveries satisfy detector parity. Standard matching predicts logical0 and fails; correlated matching and FrameNet predict the true logical1. The hybrid toggles the standard recovery with a closed odd-logical graph cycle.">
 </picture>
 
-**A valid syndrome correction can still be logically wrong.** This retained shot gives all three decoders the same 24 detector bits. Standard matching predicts `0`; correlated matching and the hybrid predict the simulated truth, `1`. The hybrid changes logical class by XORing a closed graph cycle, while preserving detector parity. This is a deliberately selected teaching case, not evidence of decoder advantage. The retained d3 study at the same nominal noise has **706 hybrid failures versus 705 correlated-matching failures in 20,000 shared shots**; uncertainty and paired comparisons matter.
-
-[Reproduce and inspect the shot](docs/presentation/README.md) · [Raw shot JSON](docs/presentation/selected-toggle.json) · [Vector figure](docs/presentation/logical-class.svg) · [Actual current playground](docs/presentation/playground-current.png)
+FrameNet changes logical class by XORing a closed graph cycle without changing detector parity. [Raw shot JSON](docs/presentation/selected-toggle.json) · [Vector figure](docs/presentation/logical-class.svg)
 
 ## Run the playground
 
@@ -44,7 +40,7 @@ its included web client, data and checkpoints.
 
 Open **http://127.0.0.1:8917**. The server binds only to loopback. The included
 checkpoints let you simulate and decode immediately; training is optional.
-Use the distance, noise, profile, seed and memory-basis controls. Step or play
+The playground opens on **Logical disagreement** (seed 75). Choose **All three fail** (seed 4) to replay the second teaching case. Each button loads the saved settings and freshly simulates the shot. The comparison shows detector parity, each predicted flip and the simulated truth. Use the distance, noise, profile, seed and memory-basis controls to run a custom shot. Step or play
 the detector history; switch between lattice and space-time views and compare
 the three decoder outcomes. A measurement-heavy profile and unseen noise
 strengths expose distribution shift. Neural Z-memory output is explicitly
@@ -112,7 +108,7 @@ PyMatching is the recommended decoder for these measured conditions.
 - Tests independently reconstruct fault traces, syndrome parity and logical
   predictions. A valid syndrome certificate is distinct from logical success.
 
-See the [technical report](docs/technical-report.pdf), its
+See the [original release](https://github.com/nazeeh111/QubitGuard/releases/latest), [technical report](docs/technical-report.pdf), its
 [editable text](docs/technical-report.md), [model card](docs/model-card.md),
 [data card](docs/data-card.md), [independent review](docs/review-notes.md),
 and [primary-source research](docs/research-foundations.md).
