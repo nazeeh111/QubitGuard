@@ -1,4 +1,6 @@
 """Actual one-shot CLI contracts; no training, hardware or study regeneration."""
+from contextlib import redirect_stderr
+import io
 import json
 import os
 from pathlib import Path
@@ -7,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -61,6 +64,20 @@ class OneShotCommandTests(unittest.TestCase):
             self.assertEqual(list(folder.glob('.qubitguard-*')), [])
             self.invoke(folder, *args)
             self.assertEqual(json.loads(target.read_text())['schema'], 'qubitguard.shot/v1')
+
+    def test_completed_shot_is_kept_when_cleanup_fails(self):
+        from qubitguard.cli import _save_shot
+
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / 'shot.json'
+            stderr = io.StringIO()
+            with (patch.object(tempfile.TemporaryDirectory, 'cleanup',
+                               side_effect=OSError('controlled cleanup failure')),
+                  redirect_stderr(stderr)):
+                _save_shot(target, '{"schema":"qubitguard.shot/v1"}\n')
+            self.assertEqual(json.loads(target.read_text())['schema'], 'qubitguard.shot/v1')
+            self.assertIn('shot saved', stderr.getvalue())
+            self.assertIn('could not clean staging directory', stderr.getvalue())
 
     def test_existing_output_is_preserved_before_source_or_scientific_import(self):
         with tempfile.TemporaryDirectory() as directory:
