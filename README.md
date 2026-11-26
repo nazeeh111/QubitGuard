@@ -77,7 +77,7 @@ Use the same admitted simulator without starting a server or training a model:
   --noise 0.007 --seed 75 --profile uniform --basis x --out shot.json
 ```
 
-`shot.json` is a data-only `qubitguard.shot/v1` record with the producing software version and the existing simulator response: settings, syndrome, corrections, predictions, certificates, provenance and measured request timings. Exit 0 means the record was produced, even if a decoder's logical outcome failed. Invalid parameters or an existing output path exit 2; existing files are preserved. Omit `--out` to print JSON. The destination's parent must exist. Keep a completed record before trying another seed; interrupted output publication can leave a partial new file.
+`shot.json` is a data-only `qubitguard.shot/v1` record with the producing software version and the existing simulator response: settings, syndrome, corrections, predictions, certificates, provenance and measured request timings. Exit 0 means the record was produced, even if a decoder's logical outcome failed. Invalid parameters or an existing output path exit 2; existing files are preserved. Omit `--out` to print JSON. The destination's parent must exist. A saved path appears only after the complete JSON has been written. Output files require a destination filesystem that supports hard links.
 
 Repeat the settings in the same pinned simulator environment to reproduce the scientific fields; per-call latency is expected to differ. Seed equality is not promised across implementations, machines or call structures. Neural Z-memory output remains unavailable. A single shot and its timings are teaching/inspection evidence, not a benchmark, error-rate estimate or hardware observation.
 

@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+import signal
 import subprocess
 import sys
 import tempfile
@@ -11,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class OneShotCommandTests(unittest.TestCase):
-    def invoke(self, folder, *args, code=0, without_site=False):
+    def invoke(self, folder, *args, code=0, without_site=False, file_size_limit=None):
         cache = folder / 'cache'
         for name in ('mpl', 'torch', 'xdg', 'tmp'):
             (cache / name).mkdir(parents=True, exist_ok=True)
@@ -22,8 +23,14 @@ class OneShotCommandTests(unittest.TestCase):
         command = [sys.executable, '-B']
         if without_site:
             command.append('-S')
+        def limit_file_size():
+            import resource
+            signal.signal(signal.SIGXFSZ, signal.SIG_IGN)
+            resource.setrlimit(resource.RLIMIT_FSIZE, (file_size_limit, file_size_limit))
+
         result = subprocess.run(command + ['-m', 'qubitguard.cli', *map(str, args)],
-                                cwd=folder, env=env, capture_output=True, text=True, timeout=60)
+                                cwd=folder, env=env, capture_output=True, text=True, timeout=60,
+                                preexec_fn=limit_file_size if file_size_limit is not None else None)
         self.assertEqual(result.returncode, code, result.stderr)
         self.assertNotIn('Traceback', result.stderr)
         return result
@@ -42,6 +49,18 @@ class OneShotCommandTests(unittest.TestCase):
                 self.assertTrue(record['shot']['certificate']['correlated'])
                 record['shot'].pop('latency_us')
             self.assertEqual(saved, repeated)
+
+    @unittest.skipUnless(os.name == 'posix', 'requires a POSIX file size limit')
+    def test_failed_write_leaves_path_available_for_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            target = folder / 'shot.json'
+            args = ['simulate', '--root', ROOT, '--seed', '75', '--out', target]
+            self.invoke(folder, *args, code=2, file_size_limit=1024)
+            self.assertFalse(target.exists())
+            self.assertEqual(list(folder.glob('.qubitguard-*')), [])
+            self.invoke(folder, *args)
+            self.assertEqual(json.loads(target.read_text())['schema'], 'qubitguard.shot/v1')
 
     def test_existing_output_is_preserved_before_source_or_scientific_import(self):
         with tempfile.TemporaryDirectory() as directory:
